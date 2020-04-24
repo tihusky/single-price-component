@@ -13,7 +13,7 @@ body {
   background: hsl(204, 43%, 93%);
   color: hsl(0, 0%, 100%);
   font-family: 'Karla', sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 
@@ -37,6 +37,10 @@ h2 {
   font-size: 1.125rem;
 }
 
+p {
+  margin: 0 0 1.5em 0;
+}
+
 .intro-subheading {
   color: hsl(71, 73%, 54%);
   font-size: .9375rem;
@@ -48,11 +52,15 @@ h2 {
 }
 
 .price {
+  display: flex;
+  align-items: center;
+  margin: 0 0 .25em 0;
   font-size: 2rem;
   font-weight: 700;
 }
 
 .price-period {
+  margin-left: 1em;
   font-size: initial;
   font-weight: initial;
   opacity: .5;
@@ -64,11 +72,74 @@ h2 {
    Layout
    ==================== */
 
+section {
+  padding: 1.5rem;
+}
+
+section :last-child {
+  margin-bottom: 0;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  backface-visibility: hidden;
+  background: hsl(71, 73%, 54%);
+  color: hsl(0, 0%, 100%);
+  border-radius: .3125rem;
+  box-shadow: 0 .625rem .625rem 0 hsla(0, 0%, 0%, .1);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .25s;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.05);
+}
+
+/* Card */
+
 .card {
   width: 20rem;
-  padding: 1rem;
+  min-width: 20rem;
   background: hsl(0, 0%, 100%);
   border-radius: .3125rem;
   box-shadow: 0 .9375rem 1.875rem 0 hsla(212, 100%, 34%, .15);
   overflow: hidden;
+}
+
+.section-cta,
+.section-features {
+  background: hsl(179, 62%, 43%);
+}
+
+.section-features {
+  position: relative;
+}
+
+.section-features::before {
+  /* Transparent overlay for the features section */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: hsla(0, 0%, 100%, .15);
+}
+
+.features-list {
+  padding: 0;
+  list-style: none;
+}
+
+.features-item {
+  font-size: .875rem;
+  opacity: .75;
 }
